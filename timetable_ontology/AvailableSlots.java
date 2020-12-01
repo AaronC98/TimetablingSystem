@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jade.content.Concept;
+import jade.content.Predicate;
 import jade.core.AID;
 
 
-public class AvailableSlots implements Concept {
-	/**
-	 * 
-	 */
+public class AvailableSlots implements Predicate {
+
 	private List<Tutorial> slots = new ArrayList<>();
-	private List<AID> owners = new ArrayList<>();
 	
 	public List<Tutorial> getSlots() {
 		return slots;
@@ -22,12 +20,8 @@ public class AvailableSlots implements Concept {
 		this.slots = slots;
 	}
 
-	public List<AID> getOwners() {
-		return owners;
-	}
 
-	public void setOwners(List<AID> owners) {
-		this.owners = owners;
-	}
+
+
 	
 }

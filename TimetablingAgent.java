@@ -61,19 +61,21 @@ public class TimetablingAgent extends Agent{
 					// Prepare the content.
 					Tutorial sem = new Tutorial();
 					if (i == 0) {
+						sem.setStudentOwner(students.get(i));
 						sem.setDay("Tuesday");
 						sem.setModuleName("SEM");
 						sem.setModuleNo("SET1010");
-						sem.setCampus("Merchystawn");
-						sem.setLecturer("Simon mhm");
+						sem.setCampus("Merchiston");
+						sem.setLecturer("Aaron");
 						sem.setStartTime(1500);
 						sem.setEndTime(1600);
 					} else if (i > 0) {
+						sem.setStudentOwner(students.get(i));
 						sem.setDay("Friday");
 						sem.setModuleName("SEM");
 						sem.setModuleNo("SET1010");
-						sem.setCampus("Merchystawn");
-						sem.setLecturer("Simon mhm");
+						sem.setCampus("Merchiston");
+						sem.setLecturer("David <3");
 						sem.setStartTime(1200);
 						sem.setEndTime(1300);
 					}
@@ -218,9 +220,8 @@ public class TimetablingAgent extends Agent{
 
 					try {
 						// Let JADE convert from Java objects to string
-						AdvertisedSlot advpredicate = new AdvertisedSlot();
-						advpredicate.setAdvertBoard(advertboard);
-						advpredicate.setOwner(myAgent.getAID());
+						AvailableSlots advpredicate = new AvailableSlots();
+						advpredicate.setSlots(advertboard.getSlots());
 						getContentManager().fillContent(reply, advpredicate);
 						//getContentManager().fillContent(reply, (ContentElement) advertBoard);
 						send(reply);
@@ -253,7 +254,6 @@ public class TimetablingAgent extends Agent{
 						if (ce instanceof Timeslot) {
 							Timeslot owns = (Timeslot) ce;
 							advertboard.getSlots().add(owns.getTutorial());
-							advertboard.getOwners().add(owns.getOwner());
 							System.out.print("Timetabler Agent added slot: " + owns.getTutorial().getModuleName());
 						}
 					}

@@ -30,14 +30,10 @@ public class Application {
 			AgentController StudentB = myContainer.createNewAgent("StudentB", StudentAgent.class.getCanonicalName(), preferencesB);
 			StudentB.start();
 
-
-			
 		}
 		catch(Exception e){
 			System.out.println("Exception starting agent: " + e.toString());
 		}
-
-
 	}
 
 }

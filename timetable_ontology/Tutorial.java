@@ -3,11 +3,13 @@ package timetable_ontology;
 import jade.content.Concept;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
+import jade.core.AID;
 
 public class Tutorial implements Concept {
 	/**
 	 * 
 	 */
+	AID studentOwner;
 	String moduleName;
 	String moduleNo;
 	String campus;
@@ -16,9 +18,16 @@ public class Tutorial implements Concept {
 	int startTime;
 	int endTime;
 
-
 	public Tutorial() {
 
+	}
+
+	public AID getStudentOwner() {
+		return studentOwner;
+	}
+
+	public void setStudentOwner(AID studentOwner) {
+		this.studentOwner = studentOwner;
 	}
 
 	public String getModuleName() {

@@ -22,7 +22,6 @@ public class TimetableOntology extends BeanOntology {
 			add(Tutorial.class);
 			add(Timeslot.class);
 			add(AvailableSlots.class);
-			add(AdvertisedSlot.class);
 			add(SwapProposal.class);
 
 		} catch (BeanOntologyException e) {
